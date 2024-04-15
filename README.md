@@ -92,3 +92,12 @@ This is the place for you to write reflections:
     Berbeda dengan java, kita perlu mendeklarasikan variable dengan lazy_static library untuk mendefinisikan variable sebagai "static" karena pada rust penting suatu variable static untuk thread-safe dimana lazy_static memastikan variable yang dideklarasikan berupa variable yang thread_safe seperti DashMap, dll.
 
 #### Reflection Subscriber-2
+1. Have you explored things outside of the steps in the tutorial, for example: src/lib.rs? If not, explain why you did not do so. If yes, explain things that you have learned from those other parts of code. <br>
+    Ya. Salah satu hal yang cukup saya pahami dari lib.rs adalah memungkinkan kita untuk membuat suatu struct atau function yang dapat diakses dalam beberapa file dalam suatu modul. Contohnya adalah fungsi compose_error_response yang digunakan pada service/notification.rs
+
+2. Since you have completed the tutorial by now and have tried to test your notification system by spawning multiple instances of Receiver, explain how Observer pattern eases you to plug in more subscribers. How about spawning more than one instance of Main app, will it still be easy enough to add to the system? <br>
+    Dengan menggunakan Observer pattern, maka subscriber/observer akan disimpan sesuai dengan url dari receivernya sehingga ketika sesuatu terjadi pada publisher, maka dengan mudah notification akan dikirim pada receiver instance yang bersangkutan. Untuk kasus spawn multiple instance dari Main app, tidak terlalu menjadi masalah dimana kita hanya perlu menyesuaikan suatu instance receiver akan berhubungan dengan instance Main app apa melalui url nya.    
+
+3. Have you tried to make your own Tests, or enhance documentation on your Postman collection? If you have tried those features, tell us whether it is useful for your work (it can be your tutorial work or your Group Project). <br>
+    Ya. Menurut saya, Postman sangat membantu untuk melakukan request pada suatu API serta mengecek hasil response dari API tersebut. Hal tersebut sangat berguna bagi proyek nanti dimana kami butuh mengetahui apakah request serta response dari API pada fitur yang kami buat sudah sesuai dengan yang diinginkan atau belum.
+
